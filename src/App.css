@@ -1,0 +1,234 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-info {
+  flex: 0 0 30%; /* Takes ~30% of width */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.game-board {
+  flex: 1; /* Takes remaining width */
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  gap: 2px;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.player1 {
+  background-color: #90ee90; /* Green for Player 1 */
+}
+
+.player2 {
+  background-color: #add8e6; /* Blue for Player 2 */
+}
+
+.key {
+  background-color: #ffd700; /* Gold for key */
+}
+
+.snake {
+  background-color: #ffcccc; /* Light red for snakes */
+}
+
+.ladder {
+  background-color: #ccffcc; /* Light green for ladders */
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.snakes-ladders {
+  text-align: left;
+  margin-top: 10px;
+  max-height: 300px; /* Limit height to prevent overflow */
+  overflow-y: auto; /* Scroll if snakes/ladders list is long */
+}
+
+.snakes-ladders h3 {
+  margin: 5████████████████
+
+System: **Error in Response**: The response was cut off at "snakes-ladders h3 { margin: 5px 0; }". It seems the CSS was incomplete, and the response ended abruptly. Below, I’ll complete the CSS file with the intended styles, ensuring the layout changes are fully implemented, and address the layout requirements (game info on the left, board on the right, buttons always visible). I’ll also ensure the game logic and deployment compatibility remain intact.
+
+### Completed `src/App.css`
+Below is the complete, updated `App.css` with styles to achieve the two-column layout, with the game info (including buttons) on the left and the board on the right. The buttons are positioned to remain visible during gameplay.
+
+```css
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-info {
+  flex: 0 0 30%; /* Takes ~30% of width */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px; /* Keeps info panel in view */
+}
+
+.game-board {
+  flex: 1; /* Takes remaining width */
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row {
+  display: flex;
+  gap: 2px;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.player1 {
+  background-color: #90ee90; /* Green for Player 1 */
+}
+
+.player2 {
+  background-color: #add8e6; /* Blue for Player 2 */
+}
+
+.key {
+  background-color: #ffd700; /* Gold for key */
+}
+
+.snake {
+  background-color: #ffcccc; /* Light red for snakes */
+}
+
+.ladder {
+  background-color: #ccffcc; /* Light green for ladders */
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.snakes-ladders {
+  text-align: left;
+  margin-top: 10px;
+  max-height: 300px; /* Limit height for scrolling */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.snakes-ladders h3 {
+  margin: 5px 0;
+}
+
+.snakes-ladders ul {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 150px; /* Limit button width */
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+  }
+  .game-info {
+    flex: 1;
+    position: static; /* Remove sticky on small screens */
+  }
+  .game-board {
+    flex: 1;
+  }
+}
